@@ -38,7 +38,15 @@ function decodeMorse(morseCode) {
       '-----':  '0',
     };
   
-    return morseCode.split('   ').map(a => a.split(' ').map(b => ref[b]).join('')).join(' ');
+    return morseCode
+      .split('   ')
+      .map(
+        a => a
+          .split(' ')
+          .map(
+            b => ref[b]
+          ).join('')
+      ).join(' ');
   }
   
   var decoded = decodeMorse(".... . -.--   .--- ..- -.. .");
